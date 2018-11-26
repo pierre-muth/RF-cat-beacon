@@ -78,7 +78,7 @@ void setup() {
   WiFi.mode(WIFI_MODE_STA); 
   WiFi.onEvent(WiFiEvent);
   
-  WiFi.begin("BoiteVivante", "82F7625EEC6894868EA329F8E1");
+  WiFi.begin("xxxxx", "yyyyy");
 
   Serial.println("Spirit1 Receiver end init");
 }
