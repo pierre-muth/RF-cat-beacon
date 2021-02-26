@@ -2,13 +2,23 @@
  * File:   main.c
  * Author: pierremuth.wordpress.com
  * Created on 26 octobre 2018, 21:44
- *             ---u---
- *        VDD -|      |- VSS
- *    led/RA5 -|      |- RA0/icspDAT/SDO
- * loraCS/RA4 -|      |- RA1/icspCLK/SCK
- *    VPP/RA3 -|      |- RA2/SDI
- *        -----
+ *    PIC12F1822:
+ *                ---u---
+ *           VDD -|      |- GND
+ *  SpiritSD/RA5 -|      |- RA0/MOSI/icspDATA
+ * SpiritCSN/RA4 -|      |- RA1/SCK /icspCLK
+ *     VPP/RA3   -|      |- RA2/MISO
+ *                 -----
  * 
+ *    SPSRFG:
+ *          |----------|
+ *          |          |
+ *          >          < SDN
+ *          >          < CS
+ *          >          < MOSI
+ *          >          < MISO
+ *      VDD >___^______< SCK
+ *             GND
  */
 
 // PIC12LF1822 Configuration Bit Settings
@@ -42,9 +52,9 @@
 
 // proto
 void init(void);
-unsigned char spiRW(unsigned char command, unsigned char data);
-void writeRegister(unsigned char address, unsigned char value);
-unsigned char readRegister(unsigned char address);
+//unsigned char spiRW(unsigned char command, unsigned char data);
+//void writeRegister(unsigned char address, unsigned char value);
+//unsigned char readRegister(unsigned char address);
 void sendWithSpirit(void);
 uint8_t getVoltage(void);
 
